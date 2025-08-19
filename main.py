@@ -1,68 +1,69 @@
 import streamlit as st
 import random
 
-# MBTI별 직업 추천 데이터
-mbti_jobs = {
-    "ISTJ": ["📊 회계사", "⚖️ 변호사", "🪖 군인", "🏛️ 행정 공무원"],
-    "ISFJ": ["💉 간호사", "📚 교사", "🤝 사회복지사", "🗂️ 비서"],
-    "INFJ": ["🧠 상담사", "✍️ 작가", "🔮 심리학자", "🌍 인권운동가"],
-    "INTJ": ["📈 전략 컨설턴트", "🧪 데이터 과학자", "🔬 연구원", "⚙️ 엔지니어"],
+# MBTI별 여행지 추천 데이터 (이모지 폭탄 버전)
+mbti_travel = {
+    "ISTJ": ["🇨🇭🏔️ 스위스 알프스", "🇯🇵⛩️ 교토 사찰 여행", "🇩🇪🏰 독일 고성 투어", "🇬🇧📜 런던 역사 여행"],
+    "ISFJ": ["🇫🇷🌹 파리 카페 거리", "🇰🇷🌸 경주 벚꽃", "🇮🇹🎨 피렌체 미술관", "🇨🇦🍁 캐나다 단풍 여행"],
+    "INFJ": ["🇳🇴❄️ 노르웨이 오로라", "🇮🇳🕉️ 인도 리트릿", "🇳🇿🌿 뉴질랜드 자연 탐험", "🇵🇪⛰️ 마추픽추"],
+    "INTJ": ["🇺🇸🏙️ 뉴욕 금융가", "🇸🇬🌆 싱가포르", "🇯🇵🔬 도쿄 테크 투어", "🇨🇳🏮 상하이"],
 
-    "ISTP": ["✈️ 파일럿", "🚒 소방관", "🔧 기계공", "⛑️ 응급 구조원"],
-    "ISFP": ["🎨 아티스트", "👗 패션 디자이너", "🎼 작곡가", "👨‍🍳 요리사"],
-    "INFP": ["📖 작가", "🧘 상담사", "👩‍🏫 교사", "💬 심리치료사"],
-    "INTP": ["🔬 연구원", "💻 개발자", "📜 철학자", "🧬 과학자"],
+    "ISTP": ["🇦🇺🏄 호주 서핑", "🇿🇦🦁 남아공 사파리", "🇨🇱⛰️ 파타고니아", "🇵🇭🤿 세부 다이빙"],
+    "ISFP": ["🇬🇷🏖️ 산토리니", "🇮🇩🌴 발리", "🇪🇸🎶 바르셀로나", "🇯🇲🌞 자메이카"],
+    "INFP": ["🇮🇸🔥 아이슬란드 오로라", "🇹🇭🌺 치앙마이 명상 여행", "🇲🇽🎭 멕시코 문화", "🇲🇦🏜️ 모로코 사막"],
+    "INTP": ["🇨🇭🔭 CERN 방문", "🇺🇸🛰️ NASA 투어", "🇩🇰🚲 코펜하겐", "🇯🇵📚 아키하바라"],
 
-    "ESTP": ["💼 기업가", "⚽ 스포츠 선수", "🗣️ 세일즈 전문가", "🚔 경찰관"],
-    "ESFP": ["🎤 연예인", "🎉 이벤트 플래너", "📢 홍보 담당자", "🌏 여행 가이드"],
-    "ENFP": ["💡 광고 기획자", "🚀 창업가", "🎭 배우", "🧑‍⚕️ 심리상담가"],
-    "ENTP": ["⚖️ 변호사", "🎙️ 정치가", "📊 마케터", "🏢 벤처 창업가"],
+    "ESTP": ["🇧🇷🎉 리우 카니발", "🇺🇸🎢 라스베가스", "🇲🇨🏎️ 모나코 F1", "🇰🇷🎮 서울 홍대"],
+    "ESFP": ["🇮🇹🍝 로마", "🇯🇵🎆 오사카 불꽃놀이", "🇺🇸🎶 LA 헐리우드", "🇦🇺🍷 시드니"],
+    "ENFP": ["🇮🇳🕉️ 리시케시", "🇵🇹🌊 포르투", "🇹🇷🕌 이스탄불", "🇨🇴🎶 카르타헤나"],
+    "ENTP": ["🇭🇰🏙️ 홍콩", "🇦🇪🌆 두바이", "🇺🇸🗽 뉴욕", "🇩🇪🍺 뮌헨 옥토버페스트"],
 
-    "ESTJ": ["🏦 경영자", "🪖 군 장교", "📋 프로젝트 매니저", "⚖️ 판사"],
-    "ESFJ": ["💉 간호사", "📚 교사", "👥 HR 전문가", "🤲 사회복지사"],
-    "ENFJ": ["👩‍🏫 교육자", "💬 심리상담가", "📢 홍보 전문가", "🌟 지도자"],
-    "ENTJ": ["💼 CEO", "⚖️ 변호사", "💰 투자은행가", "📈 경영 컨설턴트"],
+    "ESTJ": ["🇯🇵🏯 도쿄", "🇺🇸🏛️ 워싱턴 DC", "🇫🇷🏰 베르사유", "🇰🇷📈 서울 비즈니스 여행"],
+    "ESFJ": ["🇹🇭🏝️ 푸켓", "🇲🇾🌴 코타키나발루", "🇪🇸🌞 마드리드", "🇰🇷🎇 부산 불꽃축제"],
+    "ENFJ": ["🇨🇳🏮 베이징 자금성", "🇮🇹🎭 베네치아 카니발", "🇬🇧🎓 옥스퍼드", "🇺🇸🎤 브로드웨이"],
+    "ENTJ": ["🇺🇸💼 뉴욕 월스트리트", "🇨🇭🏦 취리히", "🇯🇵🚅 신칸센 투어", "🇩🇪⚙️ 베를린"],
 }
 
-# MBTI별 랜덤 색상 팔레트 (시각적으로 화려하게)
+# 색상 팔레트
 colors = [
     "#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", 
-    "#BC6FF1", "#FF914D", "#2EC4B6", "#FF5D8F"
+    "#BC6FF1", "#FF914D", "#2EC4B6", "#FF5D8F", "#845EC2", "#FF9671"
 ]
 
-st.set_page_config(page_title="MBTI 진로 추천", page_icon="🎯", layout="centered")
+st.set_page_config(page_title="MBTI 여행지 추천", page_icon="🌍", layout="centered")
 
-st.title("🎯 MBTI 기반 진로 추천 웹앱")
-st.write("당신의 MBTI를 선택하면, ✨화려한 직업 추천✨을 보여드려요!")
+st.title("🌍✨ MBTI 기반 여행지 추천 ✨🌍")
+st.write("👉 당신의 MBTI를 선택하면, 🌈이모지 폭발🌈 여행지를 추천해드려요!")
 
 # MBTI 선택
-selected_mbti = st.selectbox("👉 당신의 MBTI를 선택하세요:", list(mbti_jobs.keys()))
+selected_mbti = st.selectbox("✈️ 당신의 MBTI를 선택하세요:", list(mbti_travel.keys()))
 
-# 추천 직업 카드 스타일 표시
+# 추천 여행지 카드 출력
 if selected_mbti:
-    st.markdown(f"## 🌟 {selected_mbti} 유형에게 어울리는 직업 🌟")
+    st.markdown(f"## 🗺️ {selected_mbti} 유형에게 어울리는 여행지 🗺️")
 
-    jobs = mbti_jobs[selected_mbti]
-    color = random.choice(colors)
+    places = mbti_travel[selected_mbti]
 
-    for job in jobs:
+    for place in places:
+        color = random.choice(colors)
         st.markdown(
             f"""
             <div style="
-                background-color:{color};
-                padding:15px;
-                margin:10px 0;
-                border-radius:15px;
-                box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-                font-size:20px;
+                background:linear-gradient(135deg, {color}, #ffffff30);
+                padding:20px;
+                margin:12px 0;
+                border-radius:20px;
+                box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+                font-size:22px;
                 font-weight:bold;
                 color:white;
-                text-align:center;">
-                {job}
+                text-align:center;
+                text-shadow:1px 1px 3px black;">
+                {place}
             </div>
             """,
             unsafe_allow_html=True
         )
 
-    st.success(f"💡 {selected_mbti} 유형은 성향과 강점을 살려 위와 같은 직업에서 크게 성장할 수 있어요!")
+    st.success(f"🌴✨ {selected_mbti} 유형은 위와 같은 여행지에서 에너지를 충전하고 새로운 영감을 얻을 수 있어요! ✨🌴")
     st.balloons()
