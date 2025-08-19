@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-# MBTI별 직업 추천 데이터 (이모지 포함)
+# MBTI별 직업 추천 데이터
 mbti_jobs = {
     "ISTJ": ["📊 회계사", "⚖️ 변호사", "🪖 군인", "🏛️ 행정 공무원"],
     "ISFJ": ["💉 간호사", "📚 교사", "🤝 사회복지사", "🗂️ 비서"],
