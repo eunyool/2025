@@ -1,2 +1,2 @@
 import streamlit as st
-st.title('잠와')
+st.title('f1존잼')
