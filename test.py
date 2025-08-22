@@ -27,13 +27,14 @@ weather_data = {
     "맑음 - 무더움 🔥": {
         "기분": "피로, 짜증 증가",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/2938/2938105.png"
+        # 화창한 하늘 이미지
+        "이미지": "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"
     },
     "흐림 - 쌀쌀 ☁️": {
         "기분": "차분, 다소 우울",
         "호르몬": ["멜라토닌 (Melatonin)", "세로토닌 감소"],
-        # 바람+구름 아이콘
-        "이미지": "https://cdn-icons-png.flaticon.com/512/414/414927.png"
+        # 기존 무더움 아이콘(불)로 교체
+        "이미지": "https://cdn-icons-png.flaticon.com/512/2938/2938105.png"
     },
     "흐림 - 습함 🌫️": {
         "기분": "무기력, 답답함",
@@ -48,7 +49,8 @@ weather_data = {
     "비 - 폭우 🌧️": {
         "기분": "피로, 우울감 가능",
         "호르몬": ["코르티솔 (Cortisol)", "멜라토닌 (Melatonin)"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/1146/1146869.png"
+        # 단순 비 아이콘으로 변경
+        "이미지": "https://cdn-icons-png.flaticon.com/512/1146/1146860.png"
     },
     "눈 - 폭설 🌨️": {
         "기분": "고립감, 스트레스 가능",
