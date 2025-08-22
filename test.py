@@ -21,12 +21,12 @@ weather_data = {
     "맑음 - 쾌청 ☀️": {
         "기분": "상쾌, 에너제틱",
         "호르몬": ["세로토닌 (Serotonin)", "도파민 (Dopamine)"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"  # 밝은 하늘
+        "이미지": "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"
     },
     "맑음 - 무더움 🔥": {
         "기분": "피로, 짜증 증가",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/869/869869.png"  # 햇살
+        "이미지": "https://cdn-icons-png.flaticon.com/512/869/869869.png"
     },
     "흐림 - 쌀쌀 ☁️": {
         "기분": "차분, 다소 우울",
@@ -36,8 +36,8 @@ weather_data = {
     "흐림 - 습함 🌫️": {
         "기분": "무기력, 답답함",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 감소"],
-        # 귀엽고 눅눅한 물방울 캐릭터
-        "이미지": "https://cdn-icons-png.flaticon.com/512/4006/4006749.png"
+        # 물방울 강조
+        "이미지": "https://cdn-icons-png.flaticon.com/512/2913/2913508.png"
     },
     "비 - 소나기 🌦️": {
         "기분": "차분, 안정",
@@ -52,8 +52,8 @@ weather_data = {
     "눈 - 폭설 🌨️": {
         "기분": "고립감, 스트레스 가능",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        # 눈이 펑펑 내리는 이미지
-        "이미지": "https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+        # 구름과 눈이 흰색인 깔끔한 이미지
+        "이미지": "https://cdn-icons-png.flaticon.com/512/4150/4150898.png"
     }
 }
 
