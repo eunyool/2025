@@ -18,15 +18,16 @@ weather = st.selectbox(
 )
 
 weather_data = {
+    # 이미지 교체 완료
     "맑음 - 쾌청 ☀️": {
         "기분": "상쾌, 에너제틱",
         "호르몬": ["세로토닌 (Serotonin)", "도파민 (Dopamine)"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/869/869869.png"  # 햇살
+        "이미지": "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"  # 밝은 하늘 이미지
     },
     "맑음 - 무더움 🔥": {
         "기분": "피로, 짜증 증가",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        "이미지": "https://cdn-icons-png.flaticon.com/512/3222/3222800.png"  # 화창한 하늘
+        "이미지": "https://cdn-icons-png.flaticon.com/512/869/869869.png"  # 햇살 아이콘
     },
     "흐림 - 쌀쌀 ☁️": {
         "기분": "차분, 다소 우울",
@@ -36,8 +37,7 @@ weather_data = {
     "흐림 - 습함 🌫️": {
         "기분": "무기력, 답답함",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 감소"],
-        # 습한 날씨 느낌: 구름과 물방울
-        "이미지": "https://cdn-icons-png.flaticon.com/512/616/616490.png"
+        "이미지": "https://cdn-icons-png.flaticon.com/512/616/616490.png"  # 구름+물방울
     },
     "비 - 소나기 🌦️": {
         "기분": "차분, 안정",
@@ -52,8 +52,7 @@ weather_data = {
     "눈 - 폭설 🌨️": {
         "기분": "고립감, 스트레스 가능",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        # 눈+구름 아이콘
-        "이미지": "https://cdn-icons-png.flaticon.com/512/284/284459.png"
+        "이미지": "https://cdn-icons-png.flaticon.com/512/284/284459.png"  # 구름+눈
     }
 }
 
