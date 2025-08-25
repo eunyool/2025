@@ -36,8 +36,8 @@ weather_data = {
     "흐림 - 습함 🌫️": {
         "기분": "무기력, 답답함",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 감소"],
-        # 물방울 아이콘으로 변경
-        "이미지": "https://cdn-icons-png.flaticon.com/512/2917/2917995.png"
+        # 폭설 이미지(눈 결정)로 변경
+        "이미지": "https://cdn-icons-png.flaticon.com/512/414/414974.png"
     },
     "비 - 소나기 🌦️": {
         "기분": "차분, 안정",
@@ -52,8 +52,8 @@ weather_data = {
     "눈 - 폭설 🌨️": {
         "기분": "고립감, 스트레스 가능",
         "호르몬": ["코르티솔 (Cortisol)", "세로토닌 변동"],
-        # 눈 결정 이미지로 변경
-        "이미지": "https://cdn-icons-png.flaticon.com/512/414/414974.png"
+        # 습함 이미지(물방울)로 변경
+        "이미지": "https://cdn-icons-png.flaticon.com/512/2917/2917995.png"
     }
 }
 
